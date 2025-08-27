@@ -20,6 +20,32 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
     );
   }
 
+  // Se for abajur, carrega o modelo GLB
+  if (productType === 'abajur') {
+    const { scene } = useGLTF('/models/abajur.glb');
+    return (
+      <primitive
+        ref={meshRef}
+        object={scene}
+        position={position}
+        scale={scale}
+      />
+    );
+  }
+
+  // Se for planta, carrega o modelo GLB
+  if (productType === 'planta') {
+    const { scene } = useGLTF('/models/planta/source/planta.glb');
+    return (
+      <primitive
+        ref={meshRef}
+        object={scene}
+        position={position}
+        scale={scale}
+      />
+    );
+  }
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.01;
@@ -28,59 +54,7 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
 
   const getProductGeometry = () => {
     switch (productType) {
-      case 'poltrona':
-        return (
-          <group ref={meshRef} position={position} scale={scale}>
-            {/* Assento */}
-            <Box args={[1.2, 0.1, 1]} position={[0, 0.5, 0]}>
-              <meshStandardMaterial color="#666666" />
-            </Box>
-            {/* Encosto */}
-            <Box args={[1.2, 1, 0.1]} position={[0, 1, -0.45]}>
-              <meshStandardMaterial color="#666666" />
-            </Box>
-            {/* Braços */}
-            <Box args={[0.1, 0.8, 0.8]} position={[-0.55, 0.8, -0.1]}>
-              <meshStandardMaterial color="#666666" />
-            </Box>
-            <Box args={[0.1, 0.8, 0.8]} position={[0.55, 0.8, -0.1]}>
-              <meshStandardMaterial color="#666666" />
-            </Box>
-          </group>
-        );
-      case 'abajur':
-        return (
-          <group ref={meshRef} position={position} scale={scale}>
-            {/* Base */}
-            <Box args={[0.3, 0.05, 0.3]} position={[0, 0, 0]}>
-              <meshStandardMaterial color="#8B4513" />
-            </Box>
-            {/* Haste */}
-            <Box args={[0.02, 1, 0.02]} position={[0, 0.5, 0]}>
-              <meshStandardMaterial color="#8B4513" />
-            </Box>
-            {/* Cúpula */}
-            <mesh position={[0, 1.2, 0]}>
-              <coneGeometry args={[0.4, 0.6, 8]} />
-              <meshStandardMaterial color="#F5F5DC" />
-            </mesh>
-          </group>
-        );
-      case 'planta':
-        return (
-          <group ref={meshRef} position={position} scale={scale}>
-            {/* Vaso */}
-            <mesh position={[0, 0.2, 0]}>
-              <cylinderGeometry args={[0.2, 0.15, 0.4, 8]} />
-              <meshStandardMaterial color="#8B4513" />
-            </mesh>
-            {/* Folhas */}
-            <mesh position={[0, 0.6, 0]}>
-              <sphereGeometry args={[0.3, 8, 6]} />
-              <meshStandardMaterial color="#228B22" />
-            </mesh>
-          </group>
-        );
+      // Remova o procedural de poltrona e abajur, pois agora são modelos GLB
       case 'vestido':
         return (
           <group ref={meshRef} position={position} scale={scale}>
