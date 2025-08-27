@@ -20,7 +20,7 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
     );
   }
 
-  // Se for abajur, carrega o modelo GLB
+  // Se for abajur, carrega o modelo GLB e aplica escala menor
   if (productType === 'abajur') {
     const { scene } = useGLTF('/models/abajur.glb');
     return (
@@ -28,7 +28,7 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
         ref={meshRef}
         object={scene}
         position={position}
-        scale={scale}
+        scale={scale * 0.4} // Diminui o abajur para 40% do tamanho original
       />
     );
   }
