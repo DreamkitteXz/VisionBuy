@@ -165,16 +165,6 @@ const ARScene = ({ productType = 'poltrona', isVisible = true }) => {
           <meshStandardMaterial color="#f0f0f0" transparent opacity={0.3} />
         </mesh>
 
-        {/* Texto informativo */}
-        <Text
-          position={[0, 3, 0]}
-          fontSize={0.3}
-          color="#333333"
-          anchorX="center"
-          anchorY="middle"
-        >
-          Arraste para rotacionar • Scroll para zoom
-        </Text>
       </Canvas>
     </div>
   );
