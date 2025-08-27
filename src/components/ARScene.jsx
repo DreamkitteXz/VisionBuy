@@ -1,12 +1,25 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Text, Box } from '@react-three/drei';
+import { OrbitControls, Text, Box, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Componente de produto 3D simples
 const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
   const meshRef = useRef();
-  
+
+  // Se for poltrona, carrega o modelo GLB
+  if (productType === 'poltrona') {
+    const { scene } = useGLTF('/models/poltrona.glb');
+    return (
+      <primitive
+        ref={meshRef}
+        object={scene}
+        position={position}
+        scale={scale}
+      />
+    );
+  }
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.01;
