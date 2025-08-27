@@ -149,7 +149,7 @@ const Layout = ({ children }) => {
                 <span className="text-xl font-bold">VisionBuy</span>
               </div>
               <p className="text-gray-400 mb-4">
-                Experimente. Sinta. Compre. Tudo com Realidade Aumentada.
+                 Sinta a compra antes dela existir.
               </p>
               <p className="text-gray-400 text-sm">
                 Transformando a experiência de compra através da tecnologia de Realidade Aumentada.

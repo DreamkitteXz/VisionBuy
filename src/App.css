@@ -121,15 +121,15 @@
 
 /* VisionBuy Custom Styles */
 .visionbuy-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3a2067 0%, #25124a 100%);
 }
 
 .visionbuy-primary {
-  background: #667eea;
+  background: #3a2067;
 }
 
 .visionbuy-secondary {
-  background: #764ba2;
+  background: #25124a;
 }
 
 .ar-button {
