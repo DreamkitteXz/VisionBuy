@@ -13,10 +13,10 @@ export const categories = [
     description: 'Móveis, decoração e objetos para casa'
   },
   {
-    id: 'beleza',
-    name: 'Beleza e Cosméticos',
-    icon: '💄',
-    description: 'Maquiagem, skincare e produtos de beleza'
+    id: 'plantas',
+    name: 'Plantas e Jardinagem',
+    icon: '🪴',
+    description: 'Plantas, flores e acessórios para jardinagem'
   }
 ];
 
@@ -56,99 +56,36 @@ export const products = [
     store: 'Verde Vida',
     featured: true,
     arEnabled: true
-  },
-  {
-    id: 4,
-    name: 'Vestido Azul',
-    category: 'moda',
-    price: 'R$ 129,00',
-    image: '/api/placeholder/400/400',
-    model3d: '/models/vestido.glb',
-    description: 'Vestido azul elegante, perfeito para ocasiões especiais.',
-    store: 'Fashion Store',
-    featured: true,
-    arEnabled: true
-  },
-  {
-    id: 5,
-    name: 'Batom Basic',
-    category: 'beleza',
-    price: 'R$ 29,00',
-    image: '/api/placeholder/400/400',
-    model3d: '/models/batom.glb',
-    description: 'Batom cremoso com cor vibrante e longa duração.',
-    store: 'Beauty Plus',
-    featured: true,
-    arEnabled: true
-  },
-  {
-    id: 6,
-    name: 'Relógio Casio',
-    category: 'moda',
-    price: 'R$ 299,00',
-    image: '/api/placeholder/400/400',
-    model3d: '/models/relogio.glb',
-    description: 'Relógio Casio digital com múltiplas funcionalidades.',
-    store: 'Time Store',
-    featured: true,
-    arEnabled: true
   }
 ];
 
 export const stores = [
   {
     id: 1,
-    name: 'Móveis & Cia',
-    logo: '/api/placeholder/100/100',
+    name: 'Madeira Madeira',
+    logo: 'madeira_madeira.png',
     category: 'moveis',
     description: 'Especializada em móveis modernos e funcionais',
-    website: 'https://moveisecia.com.br',
-    products: [1, 2, 3]
+    website: 'https://www.madeiramadeira.com.br',
+    products: [1]
   },
   {
     id: 2,
-    name: 'Fashion Store',
-    logo: '/api/placeholder/100/100',
+    name: 'Avon',
+    logo: '/avon.jpg',
     category: 'moda',
-    description: 'Moda feminina e masculina com as últimas tendências',
-    website: 'https://fashionstore.com.br',
-    products: [4, 6]
-  },
-  {
-    id: 3,
-    name: 'Beauty Plus',
-    logo: '/api/placeholder/100/100',
-    category: 'beleza',
-    description: 'Cosméticos e produtos de beleza de alta qualidade',
-    website: 'https://beautyplus.com.br',
-    products: [5]
-  },
-  {
-    id: 4,
-    name: 'Luminárias Express',
-    logo: '/api/placeholder/100/100',
-    category: 'moveis',
-    description: 'Iluminação moderna e decorativa para todos os ambientes',
-    website: 'https://luminariasexpress.com.br',
+    description: 'Produtos de beleza e cuidados pessoais',
+    website: 'https://www.avon.com.br/?utm_campaign=avn_bra_mp_media-monks_na_na_always-on_conversao_search-termos-institucionais&utm_source=googleads&utm_medium=cpc&utm_placement=googleads&utm_content=conversao_na_amplo_amplo_amplo_a_nac_institucional-exato&utm_term=institucional_institucional_dinamico_na_na_na_na_na_na_na_rti_efemrd-institucional-exata_comprar-agora_cpa_na&utm_term=institucional_institucional_dinamico_na_na_na_na_na_na_na_rti_efemrd-institucional-exata_comprar-agora_cpa_na&gad_source=1&gad_campaignid=22593873116&gclid=CjwKCAjw2brFBhBOEiwAVJX5GEne2ZnscwSIYtFVsqDebgIKMMeKGJ1g39QQsiQog-NpZRZZC_LQzxoCde4QAvD_BwE',
     products: [2]
   },
   {
-    id: 5,
-    name: 'Verde Vida',
-    logo: '/api/placeholder/100/100',
-    category: 'moveis',
+    id: 3,
+    name: 'NordicGreen',
+    logo: '/plantas_loja.jpg',
+    category: 'plantas',
     description: 'Plantas e acessórios para jardinagem',
-    website: 'https://verdevida.com.br',
+    website: 'https://nordicgreen.com.br/?srsltid=AfmBOoofHeAT9k8sH2nEdOTVp6bZ3igSB1xDLgvm0KK_mKMcP7kr1rYc',
     products: [3]
-  },
-  {
-    id: 6,
-    name: 'Time Store',
-    logo: '/api/placeholder/100/100',
-    category: 'moda',
-    description: 'Relógios e acessórios de tempo',
-    website: 'https://timestore.com.br',
-    products: [6]
   }
 ];
 

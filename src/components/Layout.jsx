@@ -24,8 +24,12 @@ const Layout = ({ children }) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 visionbuy-gradient rounded-lg flex items-center justify-center">
-                <Eye className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white">
+                <img
+                  src="/logo.jpeg"
+                  alt="Logo VisionBuy"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-xl font-bold text-gray-900">VisionBuy</span>
             </Link>
@@ -135,8 +139,12 @@ const Layout = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 visionbuy-gradient rounded-lg flex items-center justify-center">
-                  <Eye className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white">
+                  <img
+                    src="/logo.jpeg"
+                    alt="Logo VisionBuy"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="text-xl font-bold">VisionBuy</span>
               </div>
