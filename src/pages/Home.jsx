@@ -41,34 +41,91 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Quem Somos Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Categorias em Destaque
+              Quem Somos
             </h2>
-            <p className="text-lg text-gray-600">
-              Descubra produtos incríveis com tecnologia de Realidade Aumentada
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto"> 
+              Na VisionBuy, acreditamos que comprar deve ser uma experiência inovadora, simples e envolvente. Unimos tecnologia imersiva e design inteligente para transformar a forma como pessoas e empresas interagem com seus produtos antes da compra.
+            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto"> 
+              Nossa plataforma permite que móveis, itens de decoração e eletrodomésticos sejam visualizados em ambientes reais através da realidade aumentada e virtual, garantindo escolhas mais seguras e satisfatórias.
+            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto"> 
+              Nascemos com o propósito de reduzir incertezas, evitar frustrações e impulsionar o varejo, oferecendo às empresas uma solução inovadora que conecta consumidores às suas escolhas de maneira única.
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {categories.map((category) => (
-              <Link
-                key={category.id}
-                to={`/?category=${category.id}`}
-                className="group bg-gray-50 rounded-xl p-8 hover:bg-gray-100 transition-colors"
-              >
-                <div className="text-center">
-                  <div className="text-6xl mb-4">{category.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                    {category.name}
-                  </h3>
-                  <p className="text-gray-600">{category.description}</p>
-                </div>
-              </Link>
-            ))}
+            <div className="text-center">
+              <div className="w-16 h-16 visionbuy-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                <Smartphone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Inovação
+              </h3>
+              <p className="text-gray-600">
+                Somos pioneiros em experiências interativas para e-commerce.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 visionbuy-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Transparência
+              </h3>
+              <p className="text-gray-600">
+                Ajudamos você a tomar decisões seguras e conscientes.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 visionbuy-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Experiência
+              </h3>
+              <p className="text-gray-600">
+                Colocamos o cliente no centro de tudo o que fazemos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+            {/* Missão, Visão e Valores Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Missão, Visão e Valores
+            </h2>
+          </div>
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-purple-700 mb-2">Missão</h3>
+            <p className="text-gray-700">
+              Levar a tecnologia de Realidade Aumentada para o varejo de forma acessível, elevando a experiência de compra e aproximando consumidores das marcas.
+            </p>
+          </div>
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-purple-700 mb-2">Visão</h3>
+            <p className="text-gray-700">
+              Ser referência no Brasil em personalização de compras com RA, promovendo inovação e eficiência no comércio digital.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-purple-700 mb-2">Valores</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Inovação</li>
+              <li>Sustentabilidade</li>
+              <li>Conexão</li>
+              <li>Acessibilidade</li>
+              <li>Experiência do Cliente</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -122,6 +179,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       {/* How it Works Section */}
       <section className="py-16 bg-white">

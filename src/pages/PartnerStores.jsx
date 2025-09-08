@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Store, Eye, ExternalLink, Search, Filter } from 'lucide-react';
-import { stores, categories, getProductsByCategory } from '../data/mockData';
+import { Store, Eye, ExternalLink, Search, Filter, ShoppingBag, Trash2 } from 'lucide-react';
+import { stores, categories, products } from '../data/mockData';
 import '../App.css';
 
 const PartnerStores = () => {
@@ -15,8 +15,9 @@ const PartnerStores = () => {
     return matchesCategory && matchesSearch;
   });
 
+  // Mostra os produtos reais mockados da loja
   const getStoreProducts = (storeProductIds) => {
-    return storeProductIds.slice(0, 3); // Mostrar apenas os primeiros 3 produtos
+    return products.filter(p => storeProductIds.includes(p.id));
   };
 
   return (
@@ -30,7 +31,6 @@ const PartnerStores = () => {
           <p className="text-xl text-gray-600 mb-8">
             Suas marcas favoritas você encontra aqui
           </p>
-          
           {/* Search and Filter */}
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-4">
@@ -46,7 +46,6 @@ const PartnerStores = () => {
                   className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
-              
               <div className="relative">
                 <select
                   value={selectedCategory}
@@ -116,7 +115,7 @@ const PartnerStores = () => {
             {filteredStores.map((store) => {
               const categoryInfo = categories.find(cat => cat.id === store.category);
               const storeProducts = getStoreProducts(store.products);
-              
+
               return (
                 <div key={store.id} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                   {/* Store Header */}
@@ -144,7 +143,6 @@ const PartnerStores = () => {
                           )}
                         </div>
                       </div>
-                      
                       <a
                         href={store.website}
                         target="_blank"
@@ -162,34 +160,49 @@ const PartnerStores = () => {
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
                       Produtos em Destaque
                     </h4>
-                    
-                    <div className="grid grid-cols-3 gap-4 mb-4">
-                      {storeProducts.map((productId) => {
-                        // Aqui você buscaria o produto pelo ID nos dados mockados
-                        const product = { 
-                          id: productId, 
-                          name: `Produto ${productId}`, 
-                          image: '/api/placeholder/150/150',
-                          price: 'R$ 99,00'
-                        };
-                        
-                        return (
-                          <div key={product.id} className="text-center">
-                            <div className="aspect-square bg-gray-200 rounded-lg mb-2 overflow-hidden">
-                              <img
-                                src={product.image}
-                                alt={product.name}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <p className="text-xs text-gray-600 truncate">
-                              {product.name}
-                            </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                      {storeProducts.map((product) => (
+                        <div key={product.id} className="product-card bg-white rounded-xl shadow-sm overflow-hidden">
+                          <div className="aspect-square bg-gray-200 relative">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover"
+                            />
+                            {product.arEnabled && (
+                              <div className="absolute top-4 left-4 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                AR
+                              </div>
+                            )}
                           </div>
-                        );
-                      })}
+                          <div className="p-6">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                              {product.name}
+                            </h3>
+                            <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                              {product.description}
+                            </p>
+                            <div className="flex items-center justify-between mb-4">
+                              <span className="text-xl font-bold text-purple-600">
+                                {product.price}
+                              </span>
+                              <span className="text-sm text-gray-500">
+                                {product.store}
+                              </span>
+                            </div>
+                            {product.arEnabled && (
+                              <Link
+                                to={`/produto/${product.id}/ar`}
+                                className="ar-button w-full text-white py-2 rounded-lg font-semibold flex items-center justify-center"
+                              >
+                                <Eye className="w-4 h-4 mr-2" />
+                                VISUALIZE EM RA
+                              </Link>
+                            )}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-
                     <div className="flex space-x-3">
                       <Link
                         to={`/loja/${store.id}`}
@@ -197,13 +210,15 @@ const PartnerStores = () => {
                       >
                         Ver Vitrine
                       </Link>
-                      <Link
-                        to={`/loja/${store.id}/ar`}
-                        className="flex-1 ar-button text-white py-2 px-4 rounded-lg font-semibold text-center flex items-center justify-center"
-                      >
-                        <Eye className="w-4 h-4 mr-1" />
-                        Experimentar
-                      </Link>
+                      {store.name === 'Madeira Madeira' && (
+                        <Link
+                          to={`/loja/${store.id}/ar`}
+                          className="flex-1 ar-button text-white py-2 px-4 rounded-lg font-semibold text-center flex items-center justify-center"
+                        >
+                          <Eye className="w-4 h-4 mr-1" />
+                          Experimentar em AR
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

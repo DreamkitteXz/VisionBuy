@@ -124,7 +124,7 @@ const Favorites = () => {
                 to="/?category=moda"
                 className="px-6 py-3 bg-purple-100 text-purple-700 rounded-lg font-semibold hover:bg-purple-200 transition-colors"
               >
-                👗 Moda e Acessórios
+                👗 Eletrodomésticos
               </Link>
               <Link
                 to="/?category=moveis"
@@ -132,12 +132,7 @@ const Favorites = () => {
               >
                 🛋️ Móveis e Decoração
               </Link>
-              <Link
-                to="/?category=beleza"
-                className="px-6 py-3 bg-pink-100 text-pink-700 rounded-lg font-semibold hover:bg-pink-200 transition-colors"
-              >
-                💄 Beleza e Cosméticos
-              </Link>
+
             </div>
           </div>
         </div>
