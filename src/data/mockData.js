@@ -57,11 +57,11 @@ export const products = [
     category: 'eletro',
     price: 'R$ 2.499,00',
     image: 'geladeira.png',
-    model3d: '/models/geladeira.glb',
+    model3d: '/models/geladeira_eletrolux.glb',
     description: 'Geladeira moderna com tecnologia Frost Free.',
-    store: 'Electrolux',
-    featured: false,
-    arEnabled: false
+    store: 'Electrolux', // <- agora é da Electrolux
+    featured: true,
+    arEnabled: true      // <- continua com AR
   }
 ];
 
@@ -82,7 +82,7 @@ export const stores = [
     category: 'eletro',
     description: 'Eletrodomésticos inovadores para sua casa',
     website: 'https://www.electrolux.com.br',
-    products: products.filter(p => p.store === 'Electrolux').map(p => p.id)
+    products: products.filter(p => p.store === 'Electrolux').map(p => p.id) // inclui a geladeira
   }
 ];
 
