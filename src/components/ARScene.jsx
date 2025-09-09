@@ -48,7 +48,7 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
 
   // Se for geladeira, carrega o modelo GLB
   if (productType === 'geladeira') {
-    const { scene } = useGLTF('/models/geladeira_eletrolux/scene.gltf');
+    const { scene } = useGLTF('/models/geladeira_eletrolux/modern_fridge.glb');
     return (
       <primitive
         ref={meshRef}

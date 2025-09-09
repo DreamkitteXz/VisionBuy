@@ -57,7 +57,7 @@ export const products = [
     category: 'eletro',
     price: 'R$ 2.499,00',
     image: 'geladeira.png',
-    model3d: '/models/geladeira_eletrolux/scene.gltf',
+    model3d: '/models/geladeira_eletrolux/modern_fridge.glb',
     description: 'Geladeira moderna com tecnologia Frost Free.',
     store: 'Electrolux', // <- agora é da Electrolux
     featured: true,
