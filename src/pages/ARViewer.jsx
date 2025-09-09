@@ -22,6 +22,7 @@ const ARViewer = () => {
     if (name.includes('poltrona')) return 'poltrona';
     if (name.includes('abajur')) return 'abajur';
     if (name.includes('planta')) return 'planta';
+    if (name.includes('geladeira')) return 'geladeira'; // <-- Adicione esta linha
     if (name.includes('vestido')) return 'vestido';
     if (name.includes('batom')) return 'batom';
     if (name.includes('relógio') || name.includes('relogio')) return 'relogio';

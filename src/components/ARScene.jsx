@@ -46,6 +46,19 @@ const Product3D = ({ productType, position = [0, 0, 0], scale = 1 }) => {
     );
   }
 
+  // Se for geladeira, carrega o modelo GLB
+  if (productType === 'geladeira') {
+    const { scene } = useGLTF('/models/geladeira_eletrolux.glb');
+    return (
+      <primitive
+        ref={meshRef}
+        object={scene}
+        position={position}
+        scale={scale}
+      />
+    );
+  }
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.01;
